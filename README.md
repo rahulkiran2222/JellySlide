@@ -1,81 +1,138 @@
-# Jelly Slide
+<p align="center">
+  <img src="./public/banner.png" alt="Jelly Slide Banner"/>
+</p>
 
-> A GPU-accelerated soft-body interactive slider built with **TypeScript**, **WebGPU**, and **TypeGPU**, exploring next-generation browser-native rendering, shader-driven animation systems, and physically inspired UI interactions.
+<h1 align="center">Jelly Slide</h1>
+
+<p align="center">
+GPU-Accelerated Soft-Body Interactive UI System powered by WebGPU & TypeGPU
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/WebGPU-Enabled-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/TypeScript-5.x-blue?style=for-the-badge&logo=typescript" />
+<img src="https://img.shields.io/badge/TypeGPU-Experimental-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/WGSL-Shaders-purple?style=for-the-badge" />
+<img src="https://img.shields.io/badge/GPU-Native_UI-green?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Research-Interactive_Systems-red?style=for-the-badge" />
+
+</p>
 
 ---
 
-## Overview
-
-**Jelly Slide** is an experimental real-time interactive UI system that reimagines conventional sliders through **soft-body deformation**, **GPU-assisted rendering**, and **shader-driven visual dynamics**.
-
-Unlike traditional DOM-based sliders, Jelly Slide leverages the emerging **WebGPU** standard alongside **TypeGPU** abstractions to create fluid, physically inspired interface motion with high-performance rendering pipelines.
-
-The project investigates how modern browser graphics architectures can support:
-
-* Soft-body UI simulation
-* Hybrid CPU-GPU animation systems
-* Real-time shader-based rendering
-* Interactive physically inspired interfaces
-* GPU-native UI experimentation
-* Advanced visual feedback systems
+> Experimental GPU Interface Research Project exploring physically expressive browser-native interactions.
 
 ---
 
-# Preview
+# Abstract
 
-The slider dynamically deforms and reacts during interaction, creating a jelly-like motion behavior driven by hybrid animation logic and shader pipeline processing.
+Jelly Slide is an experimental GPU-accelerated interactive UI system that explores the intersection of:
 
-### Features demonstrated:
+- soft-body simulation,
+- shader-driven rendering,
+- GPU-native browser graphics,
+- and physically expressive interaction systems.
 
-* Real-time jelly deformation
-* Dynamic lighting direction
-* Interactive color manipulation
-* Blur/glow rendering
-* Percentage-based animated loading
-* Soft-edge physically inspired transitions
-* GPU-rendered visual interpolation
+Built using **WebGPU**, **TypeGPU**, **WGSL**, and **TypeScript**, the project investigates how modern rendering architectures can move beyond traditional DOM-based interfaces toward real-time, emotionally responsive, and computationally efficient interaction models.
+
+Unlike conventional sliders, Jelly Slide leverages hybrid CPU-GPU rendering pipelines and soft-body inspired deformation systems to create fluid, visually dynamic UI interactions directly inside the browser.
+
+---
+
+# Live Preview
+
+<p align="center">
+  <img src="./public/demo.gif" width="100%" />
+</p>
 
 ---
 
 # Research Motivation
 
-Modern web interfaces remain largely constrained by:
+Modern browser interfaces remain constrained by:
 
-* DOM-based rendering limitations
-* CPU-heavy animation systems
-* Limited physically expressive interaction models
+- CPU-heavy rendering pipelines,
+- DOM-based animation limitations,
+- and limited physically expressive interaction systems.
 
-Jelly Slide explores an alternative paradigm:
+Jelly Slide investigates a future-facing paradigm:
 
-> **GPU-native interface rendering for emotionally expressive and physically reactive UI systems.**
+> GPU-native UI rendering for immersive and physically reactive interaction systems.
 
-The project acts as both:
+The project serves simultaneously as:
 
-* a rendering experiment, and
-* a prototype for future interactive design systems powered by WebGPU.
+- a graphics engineering experiment,
+- an HCI interaction prototype,
+- and a research-oriented rendering system.
+
+---
+
+# Key Features
+
+- Soft-body inspired UI deformation
+- Hybrid CPU-GPU rendering architecture
+- Real-time shader-based animation
+- Dynamic light interaction system
+- Blur and glow post-processing
+- Interactive color customization
+- Smooth percentage-based loading transitions
+- GPU-assisted visual interpolation
+- Physically expressive motion behavior
+- WebGPU-native rendering pipeline
+
+---
+
+# Preview Features
+
+The current system supports:
+
+| Feature | Description |
+|---|---|
+| Quality Controls | Adjustable rendering quality |
+| Dynamic Lighting | Interactive light direction |
+| Jelly Color | Real-time color customization |
+| Blur Effects | Optional glow & blur rendering |
+| Animation Range | Interactive loading from 1–100% |
+| Shader Rendering | WGSL-powered rendering pipeline |
 
 ---
 
 # Core Architecture
 
+```mermaid
+flowchart TD
+
+A[User Interaction]
+--> B[Animation Controller]
+
+B --> C[Soft-Body Simulation Layer]
+
+C --> D[WGSL Shader Pipeline]
+
+D --> E[WebGPU Rendering Engine]
+
+E --> F[Interactive Jelly Visualization]
+```
+
+---
+
+# Rendering Pipeline
+
 ```text
-User Interaction
-        │
-        ▼
-Animation Controller
-        │
-        ▼
-Soft-Body Simulation Layer
-(Hybrid CPU-GPU Logic)
-        │
-        ▼
-Shader Pipeline (WGSL)
-        │
-        ▼
-WebGPU Rendering Engine
-        │
-        ▼
-Interactive Jelly Visualization
+Input Interaction
+        ↓
+Animation State Update
+        ↓
+Soft-Body Deformation
+        ↓
+WGSL Shader Processing
+        ↓
+GPU Rendering
+        ↓
+Glow / Blur Post Processing
+        ↓
+Final Interactive Visualization
 ```
 
 ---
@@ -84,74 +141,81 @@ Interactive Jelly Visualization
 
 ## Soft-Body Inspired Motion System
 
-The slider uses a visually driven soft-body deformation approach that simulates:
+Jelly Slide implements a visually driven soft-body interaction system capable of simulating:
 
-* elasticity,
-* tension,
-* damping,
-* and fluid transitional movement.
+- elasticity,
+- damping,
+- tension,
+- fluid deformation,
+- and dynamic transitional movement.
 
-This creates the jelly-like response during loading progression and interaction.
-
----
-
-## Hybrid CPU-GPU Rendering Pipeline
-
-Jelly Slide adopts a **hybrid rendering architecture**:
-
-| Component         | Execution |
-| ----------------- | --------- |
-| Interaction Logic | CPU       |
-| Animation State   | CPU       |
-| Shader Processing | GPU       |
-| Lighting Effects  | GPU       |
-| Blur/Glow Effects | GPU       |
-| Final Rendering   | GPU       |
-
-This separation allows efficient rendering while maintaining responsive interaction handling.
+This creates the organic jelly-like interaction behavior during loading progression and user interaction.
 
 ---
 
-# Shader Pipeline
+## Hybrid CPU-GPU Architecture
 
-The rendering system utilizes custom shader pipelines through:
+The system adopts a hybrid rendering pipeline:
 
-* WebGPU
-* TypeGPU abstractions
-* WGSL shader execution
+| Component | Execution |
+|---|---|
+| User Interaction | CPU |
+| Animation State | CPU |
+| Soft-Body Logic | CPU |
+| Shader Processing | GPU |
+| Lighting Effects | GPU |
+| Blur & Glow Effects | GPU |
+| Final Rendering | GPU |
+
+This architecture balances responsiveness with high-performance graphical rendering.
+
+---
+
+# Shader System
+
+The rendering engine utilizes:
+
+- WebGPU
+- TypeGPU abstractions
+- WGSL shader execution
 
 The shader system controls:
 
-* soft gradients,
-* light diffusion,
-* glow effects,
-* edge blending,
-* dynamic color interpolation,
-* and animated visual transitions.
+- dynamic lighting,
+- glow rendering,
+- edge blending,
+- blur diffusion,
+- soft gradients,
+- and color interpolation.
 
 ---
 
-# Technologies Used
+# Why WebGPU?
 
-| Technology | Purpose                     |
-| ---------- | --------------------------- |
-| TypeScript | Application architecture    |
-| WebGPU     | GPU-native rendering        |
-| TypeGPU    | Typed GPU abstraction layer |
-| WGSL       | Shader programming          |
-| Vite       | Development and bundling    |
+Traditional web rendering systems are fundamentally constrained by CPU-bound rendering architectures.
+
+WebGPU enables:
+
+- low-level GPU access,
+- parallel graphical computation,
+- modern shader execution,
+- advanced rendering pipelines,
+- and real-time interactive visual systems.
+
+Jelly Slide explores how these capabilities can redefine browser-native UI engineering.
 
 ---
 
-# Interactive Controls
+# Technology Stack
 
-The system currently supports:
-
-* Quality adjustment
-* Dynamic light direction
-* Jelly color customization
-* Blur toggling
-* Real-time progress animation (1–100%)
+| Layer | Technology |
+|---|---|
+| Language | TypeScript |
+| Graphics API | WebGPU |
+| GPU Abstraction | TypeGPU |
+| Shader Language | WGSL |
+| Build Tool | Vite |
+| Rendering Model | Hybrid CPU-GPU |
 
 ---
 
@@ -159,24 +223,32 @@ The system currently supports:
 
 The project is designed for:
 
-* low-latency rendering,
-* smooth animation interpolation,
-* and responsive GPU-assisted interaction.
+- low-latency rendering,
+- high-frequency animation updates,
+- responsive interaction handling,
+- and efficient GPU-assisted visualization.
 
-Performance benefits include:
+---
 
-* reduced DOM overhead,
-* shader-based visual computation,
-* and efficient rendering execution through WebGPU.
+# Performance Metrics
+
+| Metric | Value |
+|---|---|
+| Rendering Pipeline | Hybrid CPU-GPU |
+| Target FPS | 60 FPS |
+| Graphics API | WebGPU |
+| Shader System | WGSL |
+| UI Latency | Low-latency interaction |
+| Animation Type | Soft-body inspired |
 
 ---
 
 # Browser Compatibility
 
-## Recommended
+## Recommended Browsers
 
-* Google Chrome Canary
-* Microsoft Edge Canary
+- Google Chrome Canary
+- Microsoft Edge Canary
 
 with:
 
@@ -184,11 +256,13 @@ with:
 --enable-unsafe-webgpu
 ```
 
-## Requirements
+---
 
-* WebGPU-enabled browser
-* Node.js v18+
-* Modern GPU drivers
+# Requirements
+
+- Node.js v18+
+- WebGPU-supported browser
+- Modern GPU drivers
 
 ---
 
@@ -213,8 +287,8 @@ src/
 │
 ├── shaders/          # WGSL shader modules
 ├── renderer/         # WebGPU rendering pipeline
-├── animation/        # Soft-body animation logic
-├── controls/         # Interactive parameter controls
+├── animation/        # Soft-body interaction logic
+├── controls/         # UI interaction controls
 ├── gpu/              # GPU abstraction utilities
 ├── ui/               # Interface components
 └── main.ts           # Application entry point
@@ -226,39 +300,58 @@ src/
 
 This project explores research directions in:
 
-* GPU-native UI systems
-* Real-time browser graphics
-* Physically expressive interfaces
-* Soft-body interaction models
-* Human-computer interaction (HCI)
-* WebGPU rendering architectures
-* Interactive shader systems
+- GPU-native interface systems
+- Real-time browser graphics
+- Physically expressive UI systems
+- Shader-driven interaction models
+- Human-computer interaction (HCI)
+- Soft-body browser rendering
+- Interactive visual computation
+- Modern WebGPU architectures
 
 ---
 
-# Future Work
+# Future Research Directions
 
-Planned extensions include:
+Planned future extensions include:
 
-* Fully GPU-driven physics simulation
-* Compute shader integration
-* Multi-object soft-body interaction
-* Advanced fluid dynamics
-* Adaptive haptic-inspired animation
-* WebXR interaction support
-* AI-assisted motion synthesis
-* Procedural material systems
+- GPU compute shader physics
+- Fully GPU-driven soft-body simulation
+- Fluid interaction systems
+- Multi-object deformation systems
+- Adaptive interaction modeling
+- WebXR integration
+- AI-assisted animation synthesis
+- Procedural material rendering
+- Real-time physically based UI systems
 
 ---
 
 # Academic Relevance
 
-Jelly Slide can serve as a prototype system for research involving:
+Jelly Slide may serve as a prototype framework for research involving:
 
-* computational interaction design,
-* browser graphics systems,
-* physically inspired UI rendering,
-* and next-generation GPU-assisted interface engineering.
+- computational interaction design,
+- browser graphics engineering,
+- physically inspired interfaces,
+- GPU-native UI systems,
+- and next-generation rendering architectures.
+
+---
+
+# Citation
+
+If referencing this project in academic work:
+
+```bibtex
+@software{jellyslide2026,
+  author = {Rahul Kiran G},
+  title = {Jelly Slide: GPU-Native Soft-Body Interactive UI System},
+  year = {2026},
+  publisher = {GitHub},
+  url = {https://github.com/rahulkiran2222/jelly-slide}
+}
+```
 
 ---
 
@@ -268,27 +361,21 @@ MIT License
 
 ---
 
-# Citation
-
-If referencing this work in research or academic projects:
-
-```bibtex
-@software{jellyslide2026,
-  title={Jelly Slide: A WebGPU-Based Soft-Body Interactive UI System},
-  author={Rahul Kiran G},
-  year={2026},
-  url={https://github.com/rahulkiran2222/jelly-slide}
-}
-```
-
----
-
 # Acknowledgements
 
 Inspired by:
 
-* GPU-native rendering research
-* Physically based interaction systems
-* Experimental motion design
-* Modern shader-driven interfaces
-* Next-generation browser graphics architectures
+- GPU-native rendering systems
+- Experimental motion design
+- Physically based interaction systems
+- Shader-driven visual architectures
+- Modern browser graphics research
+- Next-generation interactive UI systems
+
+---
+
+<p align="center">
+
+Built with WebGPU • TypeGPU • WGSL • TypeScript
+
+</p>
